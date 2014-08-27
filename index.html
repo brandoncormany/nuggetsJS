@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>NuggetJS</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container" ng-controller="sampleCtrl">
+    <h1>Just some text to see</h1>
+    <input type="text" placeholder="Enter your name" ng-model="name">
+    <h2>Hello {{ name }}</h2>
+    <button type="button" class="btn btn-success" ng-click="changeName()">Make the Name Dave</button>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="person in people">
+          <td>{{ person.first }}</td>
+          <td>{{ person.last }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="New First Name" ng-model="firstName"></td>
+          <td><input type="text" placeholder="New Last Name" ng-model="lastName"></td>
+          <td><button type="button" class="btn btn-success" ng-click="addName()">Add</button>  </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <button type="button" class="btn btn-danger" ng-click="popName()">Remove Last Name</button>
+
+    <p>
+      {{ people }}
+    </p>
+  </div>
+
+</body>
+</html>
