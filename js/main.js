@@ -1,27 +1,27 @@
-function sampleCtrl($scope) {
-  $scope.name = "";
-  $scope.firstName = "";
-  $scope.lastName = "";
+var myApp = angular.module('myApp', []);
 
-  $scope.people = [
-    {first: "George", last: "Clooney"},
-    {first: "Lebron", last: "James"},
-    {first: "Marie", last: "Curie"},
-    {first: "Mike", last: "Trout"},
-  ];
+myApp.controller('sampleCtrl', function($scope) {
+  $scope.name = '';
 
   $scope.changeName = function(){
     $scope.name = "Dave";
   };
+});
 
+myApp.controller('helloCtrl', function($scope){
+  $scope.names = ['Dave', 'Mike', 'Brandon'];
+  $scope.newName = "";
   $scope.addName = function(){
-    $scope.people.push(
-      {first: $scope.firstName, last: $scope.lastName}
-    );
-    $scope.firstName = "";
-    $scope.lastName = "";
+    $scope.names.push($scope.newName);
+    $scope.newName = "";
   };
-  $scope.popName = function(){
-    $scope.people.pop();
-  }
-};
+});
+//this is a separate controller that should only been shown when part of the same DIV in the HTML
+myApp.controller('byeCtrl', function($scope){
+  $scope.names = ['Denise', 'Sergio', 'Vince'];
+  $scope.newName = "";
+  $scope.addName = function(){
+    $scope.names.push($scope.newName);
+    $scope.newName = "";
+  };
+});

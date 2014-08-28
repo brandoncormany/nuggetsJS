@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='myApp'>
 <head lang="en">
   <meta charset="UTF-8">
   <title>NuggetJS</title>
@@ -42,6 +42,27 @@
       {{ people }}
     </p>
   </div>
+
+  <div class="container" ng-controller='helloCtrl'>
+    <input type="text" placeholder="Enter your name" ng-model="newName">
+    <button type="button" class="btn btn-info" ng-click="addName()">Add Name</button>
+    <h1>Hello</h1>
+    <ul>
+      <li ng-repeat='name in names'>{{ name }}</li>
+    </ul>
+  </div>
+
+  <div class="container" ng-controller='byeCtrl'>
+    <input type="text" placeholder="Enter your name" ng-model="newName">
+    <button type="button" class="btn btn-info" ng-click="addName()">Add Name</button>
+    <h1>Bye</h1>
+    <ul>
+      <li ng-repeat='name in names'>{{ name }}</li>
+    </ul>
+  </div>
+
+
+
 
 </body>
 </html>
