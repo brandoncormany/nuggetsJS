@@ -14,30 +14,6 @@
     <input type="text" placeholder="Enter your name" ng-model="name">
     <h2>Hello {{ name }}</h2>
     <button type="button" class="btn btn-success" ng-click="changeName()">Make the Name Dave</button>
-
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="person in people">
-          <td>{{ person.first }}</td>
-          <td>{{ person.last }}</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><input type="text" placeholder="New First Name" ng-model="firstName"></td>
-          <td><input type="text" placeholder="New Last Name" ng-model="lastName"></td>
-          <td><button type="button" class="btn btn-success" ng-click="addName()">Add</button>  </td>
-        </tr>
-      </tbody>
-
-    </table>
-    <button type="button" class="btn btn-danger" ng-click="popName()">Remove Last Name</button>
-
     <p>
       {{ people }}
     </p>
@@ -47,22 +23,12 @@
     <input type="text" placeholder="Enter your name" ng-model="newName">
     <button type="button" class="btn btn-info" ng-click="addName()">Add Name</button>
     <h1>Hello</h1>
-    <ul>
-      <li ng-repeat='name in names'>{{ name }}</li>
+    <ul class="list-group">
+      <li ng-repeat='name in names' class="list-group-item">{{ name }}</li>
     </ul>
+
+    <input type="number" ng-model="firstNum" min="20"> + <input type="number" ng-model="secondNum"> = the answer is {{ firstNum + secondNum | currency }}
   </div>
-
-  <div class="container" ng-controller='byeCtrl'>
-    <input type="text" placeholder="Enter your name" ng-model="newName">
-    <button type="button" class="btn btn-info" ng-click="addName()">Add Name</button>
-    <h1>Bye</h1>
-    <ul>
-      <li ng-repeat='name in names'>{{ name }}</li>
-    </ul>
-  </div>
-
-
-
 
 </body>
 </html>
